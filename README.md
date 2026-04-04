@@ -94,6 +94,6 @@ The **Options** page lets you configure theming and UI performance.
 
 ## :sparkling_heart: Support
 
-- :white_check_mark: ScriptWare
-- :white_check_mark: Synapse X
-- :white_check_mark: Krnl
+- :white_check_mark: WAVE
+- :white_check_mark: Synapse Z
+- :white_check_mark: XENO
