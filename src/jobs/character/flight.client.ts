@@ -15,7 +15,7 @@ const moveDirection = {
 // Whether the player is currently flying, the speed in studs per second, and
 // the movement direction.
 let enabled = false;
-let speed = 16;
+let speed =  100;
 
 // The root part and current CFrame. Undefined when there is no character.
 let humanoidRoot: BasePart | undefined;
