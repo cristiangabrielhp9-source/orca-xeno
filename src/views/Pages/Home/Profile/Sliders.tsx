@@ -25,7 +25,7 @@ function Sliders() {
 				jobName="flight"
 				units="studs/s"
 				min={10}
-				max={100}
+				max={1000}
 				position={0}
 			/>
 			<Slider
