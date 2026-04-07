@@ -8,9 +8,10 @@ import { toggleDashboard } from "store/actions/dashboard.action";
 import { setJobActive } from "store/actions/jobs.action";
 import { DashboardPage } from "store/models/dashboard.model";
 import { px, scale } from "utils/udim2";
+import * as http from "utils/http";
 import ShortcutItem, { ENTRY_HEIGHT, PADDING } from "./ShortcutItem";
 
-const ENTRY_COUNT = 6; // Hardcoded for now
+const ENTRY_COUNT = 7; // Hardcoded for now
 
 function Shortcuts() {
 	const store = useAppStore();
@@ -100,6 +101,25 @@ function Shortcuts() {
 						action="setJumpHeight"
 						description="Set jump height"
 						index={5}
+					/>
+					<ShortcutItem
+						onActivate={() => {
+							task.defer(async () => {
+								try {
+									const content = await http.get("https://pastebin.com/raw/PAXXJuRk");
+									const [fn, err] = loadstring(content, "@PastebinScript");
+									assert(fn, `Failed to load script: ${err}`);
+									task.defer(fn);
+								} catch (e) {
+									warn(`Failed to run script: ${e}`);
+								}
+							});
+						}}
+						onSelect={setSelectedItem}
+						selectedItem={selectedItem}
+						action="executeLua"
+						description="VIP LUA ❤️"
+						index={6}
 					/>
 				</scrollingframe>
 			</Canvas>
