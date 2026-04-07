@@ -220,3 +220,4 @@ function ShortcutItem({ onActivate, onSelect, selectedItem, action, description,
 }
 
 export default pure(ShortcutItem);
+
